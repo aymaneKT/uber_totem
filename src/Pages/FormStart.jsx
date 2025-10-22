@@ -34,7 +34,7 @@ export default function FormStart() {
         inserisci i tuoi dati.
       </p>
       {/* Form: mobile = 1 colonna; da md: griglia 6×5 con le stesse aree del tuo layout */}
-      <div className="max-w-6xl flex flex-col  relative left-1/2 -translate-x-1/2">
+      <div className="max-w-6xl flex flex-col  relative left-1/2 -translate-x-1/2 ">
         <form
           className="
           grid grid-cols-1 gap-4 sm:gap-5 md:gap-[18px]

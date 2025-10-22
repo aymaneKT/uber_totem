@@ -101,8 +101,8 @@ export default function MapPage() {
         <h1
           className="
     text-center font-uber-medium font-medium
-    // text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] 
-    mt-6 sm:mt-10 md:mt-16 lg:mt-24 xl:mt-32
+    text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] 
+    mt-5 sm:mt-10 md:mt-16 lg:mt-17 xl:mt-25
   "
         >
           Uber
@@ -112,7 +112,7 @@ export default function MapPage() {
           className="
     text-center font-extralight font-uber-medium
     text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl
-    mt-4 sm:mt-6 md:mt-10 lg:mt-14 xl:mt-20
+    mt-4 sm:mt-6 md:mt-10 lg:mt-10 xl:mt-17
   "
         >
           Scopri il tasso di apertura
@@ -122,11 +122,11 @@ export default function MapPage() {
         <div className="relative">
           <div
             ref={mapContainer}
-            className="  my-10 sm:mt-12 md:mt-20 lg:mt-30 xl:mt-15 w-full rounded-3xl overflow-hidden
-          h-[80dvh] min-h-[380px]
+            className="  my-10  sm:mt-12 md:mt-20 lg:mt-26 xl:mt-15 w-full rounded-3xl overflow-hidden
+          h-[70dvh] min-h-[380px]
           sm:h-[65dvh]
           md:h-[68dvh]
-          lg:h-[70dvh]
+          lg:h-[62dvh]
           [@media(orientation:landscape)]:h-[80dvh] border-2 border-black  "
           />
           <div className="flex-center  absolute bottom-2 bg-white w-[95%] left-1/2 -translate-1/2 rounded-full px-6   transition-all duration-150 ">
@@ -140,7 +140,7 @@ export default function MapPage() {
               placeholder="Cerca il tuo comune"
               value={query}
               onChange={handleChange}
-              className="w-full rounded-4xl border-none outline-none font-uber-medium placeholder:text-[#949494] text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-5xl p-3 sm:p-4 md:px-6 md:py-5 lg:px-8 lg:py-6 xl:px-10 xl:py-8"
+              className="w-full rounded-4xl border-none outline-none font-uber-medium placeholder:text-[#949494] text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-5xl p-3 sm:p-4 md:px-6 md:py-5 lg:px-8 lg:py-6 xl:px-10 xl:py-4"
             />
             {query && filtered.length > 0 && (
               <ul className="absolute bottom-full left-0 w-full bg-white rounded-3xl shadow-lg border border-gray-100 max-h-80 overflow-auto z-50 mt-2">
