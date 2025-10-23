@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
-
+import { motion } from "motion/react";
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
 export default function MapPage() {
@@ -97,11 +97,22 @@ export default function MapPage() {
 
   return (
     <>
+      {/* <motion.div
+        animate={{
+          transform: "translateX(0%)",
+          transition: { duration: 0.7, ease: [0.83, 0, 0.17, 1] },
+        }}
+        exit={{
+          transform: "translateX(200%)",
+          transition: { duration: 0.7, ease: [0.83, 0, 0.17, 1] },
+        }}
+        className="absolute inset-0 bg-white z-50 -translate-x-full"
+      ></motion.div> */}
       <div className="px-[5%]">
         <h1
           className="
     text-center font-uber-medium font-medium
-    text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] 
+    text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl 2xl:text-[10rem]
     mt-5 sm:mt-10 md:mt-16 lg:mt-17 xl:mt-25
   "
         >
@@ -143,12 +154,12 @@ export default function MapPage() {
               className="w-full rounded-4xl border-none outline-none font-uber-medium placeholder:text-[#949494] text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-5xl p-3 sm:p-4 md:px-6 md:py-5 lg:px-8 lg:py-6 xl:px-10 xl:py-4"
             />
             {query && filtered.length > 0 && (
-              <ul className="absolute bottom-full left-0 w-full bg-white rounded-3xl shadow-lg border border-gray-100 max-h-80 overflow-auto z-50 mt-2">
+              <ul className="absolute bottom-full left-0 w-full bg-white rounded-3xl shadow-lg border border-gray-100 max-h-80 overflow-auto z-50 my-2 ">
                 {filtered.map((c, i) => (
                   <li
                     key={i}
                     onClick={() => handleSelect(c)}
-                    className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 cursor-pointer text-lg border-b border-gray-100 last:border-b-0"
+                    className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 cursor-pointer text-lg border-b border-gray-100 last:border-b-0"
                   >
                     <div className="bg-[#545454] p-3 rounded-full">
                       <img

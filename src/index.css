@@ -10,19 +10,20 @@
   src: url("/fonts/UberMoveMedium.otf") format("truetype");
 }
 @font-face {
-  font-family: "Uber Move Light";
+  font-family: "Uber Move Text light";
+  src: url("/fonts/UberMoveTextLight.otf") format("truetype");
 }
 @theme {
   --font-uber: "Uber Move Text", sans-serif;
   --font-uber-medium: "Uber Move Text Medium", sans-serif;
-  --font-uber-light: "Uber Move Light";
+  --font-uber-light: "Uber Move Text light", sans-serif;
 }
 
 @utility text-responsive-title {
-  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+  @apply text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
 }
 @utility text-responsive-subtitle {
-  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+  @apply text-xs sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
 }
 @utility flex-center {
   @apply flex justify-center items-center;
