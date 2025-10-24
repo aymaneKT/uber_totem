@@ -1,22 +1,27 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Uber Move Text";
-  src: url("/fonts/UberMoveBold.otf") format("truetype");
+  font-family: "Uber Move Text Bold";
+  src: url("/fonts/UberMove-Bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Uber Move Text Medium";
-  src: url("/fonts/UberMoveMedium.otf") format("truetype");
+  src: url("/fonts/UberMove-Medium.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Uber Move Text light";
+  font-family: "Uber Move Text Regular";
+  src: url("/fonts/UberMove-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Uber Move Text Light";
   src: url("/fonts/UberMoveTextLight.otf") format("truetype");
 }
 @theme {
-  --font-uber: "Uber Move Text", sans-serif;
+  --font-uber-regular: "Uber Move Text Regular", sans-serif;
   --font-uber-medium: "Uber Move Text Medium", sans-serif;
-  --font-uber-light: "Uber Move Text light", sans-serif;
+  --font-uber-bold: "Uber Move Text Bold", sans-serif;
+  --font-uber-light: "Uber Move Text Light", sans-serif;
 }
 
 @utility text-responsive-title {

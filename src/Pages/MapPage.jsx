@@ -1,43 +1,23 @@
 import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
-import { motion } from "motion/react";
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
 export default function MapPage() {
   const mapContainer = useRef(null);
   const mapRef = useRef(null);
+  const inputRef = useRef(null);
 
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/aymanekabti/cmh0jrn8o00ae01qug9m9cv2s",
+      style: import.meta.env.VITE_MAPBOX_STYLE,
       center: [12.5, 42.8],
       zoom: 5,
-      pitch: 0,
+      pitch: 15,
       bearing: 0,
       attributionControl: false,
     });
     mapRef.current = map;
-
-    // map.on("style.load", () => {
-    //   const canvas = map.getCanvas();
-    //   canvas.style.filter = "grayscale(100%)";
-    // });
-
-    // map.addControl(
-    //   new MapboxGeocoder({
-    //     accessToken: mapboxgl.accessToken,
-    //     mapboxgl: mapboxgl,
-    //     placeholder: "Cerca il tuo comune",
-    //     countries: "it",
-    //     marker: false,
-    //   }),
-    //   "top-left"
-    // );
-
-    // map.addControl(new mapboxgl.NavigationControl(), "top-right");
-    // map.addControl(new mapboxgl.FullscreenControl(), "top-right");
-
     return () => map.remove();
   }, []);
 
@@ -97,23 +77,12 @@ export default function MapPage() {
 
   return (
     <>
-      {/* <motion.div
-        animate={{
-          transform: "translateX(0%)",
-          transition: { duration: 0.7, ease: [0.83, 0, 0.17, 1] },
-        }}
-        exit={{
-          transform: "translateX(200%)",
-          transition: { duration: 0.7, ease: [0.83, 0, 0.17, 1] },
-        }}
-        className="absolute inset-0 bg-white z-50 -translate-x-full"
-      ></motion.div> */}
       <div className="px-[5%]">
         <h1
           className="
     text-center font-uber-medium font-medium
-    text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl 2xl:text-[10rem]
-    mt-5 sm:mt-10 md:mt-16 lg:mt-17 xl:mt-25
+    text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-xl 2xl:text-[10rem]
+    mt-5 sm:mt-10 md:mt-16 lg:mt-22 xl:mt-25
   "
         >
           Uber
@@ -150,6 +119,7 @@ export default function MapPage() {
               type="text"
               placeholder="Cerca il tuo comune"
               value={query}
+              ref={inputRef}
               onChange={handleChange}
               className="w-full rounded-4xl border-none outline-none font-uber-medium placeholder:text-[#949494] text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-5xl p-3 sm:p-4 md:px-6 md:py-5 lg:px-8 lg:py-6 xl:px-10 xl:py-4"
             />
@@ -178,7 +148,10 @@ export default function MapPage() {
               src="/images/close.png"
               alt="icon"
               className=" w-5 sm:w-6 md:w-8 lg:w-8 xl:w-9 2xl:w-12 opacity-70"
-              onClick={() => setQuery("")}
+              onClick={() => {
+                setQuery("");
+                inputRef.current.focus();
+              }}
               loading="lazy"
             />
           </div>
